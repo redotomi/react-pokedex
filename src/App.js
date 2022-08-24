@@ -1,4 +1,4 @@
-// import { BrowserRouter as Router, Switch, Route, NavLink, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
 import SearchPokemon from './components/SearchPokemon';
 import Pokemon from './components/Pokemon';
 import Logo from './components/small-components/Logo';
@@ -11,10 +11,18 @@ function App() {
       {/* <header>a</header>
       <button></button>
       <button></button> */}
-      <Logo />
-      <SearchPokemon />
-      <CardsContainer />
-      {/* <Pokemon /> */}
+      <Router>
+        <Logo />
+        <Switch>
+          <Route path='/' exact>
+            <SearchPokemon />
+            <CardsContainer />
+          </Route>
+          <Route path='/:name'>
+            <Pokemon />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

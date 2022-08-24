@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react';
-import Loader from './small-components/Loader';
+import { NavLink } from 'react-router-dom';
+import addCaps from '../addCaps';
 import './Card.css'
 
 export default function Card(props) {
   return (
-    <a className="card" href="#">
+    <NavLink className="card" to={`/${props.pokemonName}`}>
       <div className="card-body">
-        {props.pokemonName}
+        {addCaps(props.pokemonName)}
       </div>
-    </a>
+    </NavLink>
   );
 }

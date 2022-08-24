@@ -37,20 +37,20 @@ export const useFetchReducerSearch = (fetchResource, param, timeout) => {
   return state;
 };
 
-export const useFetchReducer = (fetchResource) => {
+export const useFetchReducer = (fetchResource, param) => {
   const [state, dispatch] = useReducer(fetchReducer, initialState);
 
   useEffect(() => {
     dispatch({ type: 'LOAD' });
     const getPokemons = async () => {
       try {
-        const resource = await fetchResource();
+        const resource = await fetchResource(param);
         dispatch({ type: 'SUCCESS', payload: resource })
       } catch (error) {
         dispatch({ type: 'FAILURE', payload: error })
       }
     }
     getPokemons();
-  }, [fetchResource])
+  }, [fetchResource, param])
   return state;
 }

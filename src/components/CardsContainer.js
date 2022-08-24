@@ -19,7 +19,7 @@ export default function CardsContainer() {
         {
           data && data.results.map((pokemon) => (
             <Card
-              pokemonName={addCaps(pokemon.name)}
+              pokemonName={pokemon.name}
               key={pokemon.url}
             />
           ))

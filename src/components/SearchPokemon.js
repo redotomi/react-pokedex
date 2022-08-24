@@ -37,7 +37,7 @@ export default function SearchPokemon() {
                 {
                   data &&
                   <Card
-                    pokemonName={addCaps(data.species.name)}
+                    pokemonName={data.species.name}
                   />
                 }
               </div>
@@ -51,7 +51,7 @@ export default function SearchPokemon() {
 
 
       }
-      <h3>All Pokémon</h3>
+      <h3>All Pokémons</h3>
     </>
   );
 }
