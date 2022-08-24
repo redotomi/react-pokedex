@@ -1,4 +1,4 @@
-const BASE_URL = 'https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0';
+const BASE_URL = 'https://pokeapi.co/api/v2/pokemon';
 
 const getResource = async (resourceUrl) => {
   const response = await fetch(resourceUrl);
@@ -11,8 +11,8 @@ const getResource = async (resourceUrl) => {
 
 const pokeapi = {
   searchPokemons: () =>
-    getResource(`${BASE_URL}`),
-  getPokemonById: (id) => getResource(`${BASE_URL}/${id}`),
+    getResource(`${BASE_URL}?limit=100000&offset=0`),
+  getPokemonByName: (name) => getResource(`${BASE_URL}/${name}`),
 };
 
 export default pokeapi;

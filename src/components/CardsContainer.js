@@ -4,10 +4,7 @@ import pokeapi from "../pokeapi";
 import Loader from "./small-components/Loader";
 import { useFetchReducer } from "../hooks/useFetch";
 import './CardsContainer.css'
-
-function addCaps(word) {
-  return word.charAt(0).toUpperCase() + word.slice(1);
-}
+import addCaps from '../addCaps';
 
 export default function CardsContainer() {
   const { data, error, loading } = useFetchReducer(pokeapi.searchPokemons);
