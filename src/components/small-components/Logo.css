@@ -1,0 +1,11 @@
+.logo {
+  margin-top: 5vh;
+  width: 490px;
+  cursor: pointer;
+}
+
+@media (max-width: 861px) {
+  .logo {
+    width: 90vw;
+  }
+}
